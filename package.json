@@ -1,0 +1,25 @@
+{
+  "name": "ai-humanoid-app",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "npm run copy-www",
+    "copy-www": "cp -r src/* www/ || xcopy /E /I /Y src www 2>nul || echo Copy completed",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "devDependencies": {
+    "@capacitor/android": "^8.0.1",
+    "@capacitor/cli": "^8.0.1",
+    "@capacitor/core": "^8.0.1"
+  },
+  "dependencies": {
+    "@capacitor-community/text-to-speech": "^8.0.0",
+    "@capacitor/camera": "^8.0.0",
+    "@capacitor/device": "^8.0.0"
+  }
+}

@@ -1,0 +1,41 @@
+pluginManagement {
+    repositories {
+        google()
+        mavenCentral()
+        gradlePluginPortal()
+    }
+}
+
+dependencyResolutionManagement {
+    repositoriesMode.set(RepositoriesMode.PREFER_SETTINGS)
+    repositories {
+        google()
+        mavenCentral()
+        maven { url "https://jitpack.io" }
+
+        // Local libs for Capacitor / Cordova plugins
+        flatDir {
+            dirs(
+                "../capacitor-cordova-android-plugins/src/main/libs",
+                "libs"
+            )
+        }
+    }
+}
+
+// Capacitor settings (must be BEFORE includes)
+apply from: "capacitor.settings.gradle"
+
+rootProject.name = "ai-humanoid-app"
+
+// Modules
+include(":app")
+include(":capacitor-android")
+include(":capacitor-cordova-android-plugins")
+
+// Module paths
+project(":capacitor-cordova-android-plugins").projectDir =
+        new File("./capacitor-cordova-android-plugins")
+
+project(":capacitor-android").projectDir =
+        new File("../node_modules/@capacitor/android/capacitor")

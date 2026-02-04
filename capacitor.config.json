@@ -1,0 +1,6 @@
+{
+  "appId": "com.kulsoom.aihumanoidbook",
+  "appName": "AI Humanoid Robotic Book",
+  "webDir": "www",
+  "bundledWebRuntime": false
+}

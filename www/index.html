@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>AI Humanoid Robotic Book</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <script type="module" src="capacitor.js"></script>
+  </head>
+  <body>
+    <div class="app">
+      <h1>🎉 AI Humanoid Robotic Book</h1>
+      <p>Your Capacitor Android app is working perfectly!</p>
+      <button id="testButton">Test Capacitor Plugin</button>
+      <div id="result"></div>
+    </div>
+
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        const button = document.getElementById('testButton');
+        const result = document.getElementById('result');
+
+        button.addEventListener('click', async function() {
+          try {
+            // Test basic Capacitor functionality
+            if (window.Capacitor) {
+              const { Plugins } = window.Capacitor;
+              result.innerHTML = '<p>Capacitor is working! Platform: ' + window.Capacitor.getPlatform() + '</p>';
+            } else {
+              result.innerHTML = '<p>Capacitor not available in browser</p>';
+            }
+          } catch (error) {
+            result.innerHTML = '<p>Error: ' + error.message + '</p>';
+          }
+        });
+      });
+    </script>
+
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 20px;
+        background-color: #f0f0f0;
+      }
+
+      .app {
+        max-width: 600px;
+        margin: 0 auto;
+        background: white;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      }
+
+      button {
+        background-color: #3880ff;
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 4px;
+        cursor: pointer;
+        font-size: 16px;
+      }
+
+      button:hover {
+        background-color: #3478e4;
+      }
+    </style>
+  </body>
+</html>
